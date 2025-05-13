@@ -52,6 +52,18 @@
             "migrations/.gitignore"
         ]
     },
+    "friendsofphp/php-cs-fixer": {
+        "version": "3.75",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.0",
+            "ref": "be2103eb4a20942e28a6dd87736669b757132435"
+        },
+        "files": [
+            ".php-cs-fixer.dist.php"
+        ]
+    },
     "hautelook/alice-bundle": {
         "version": "2.14",
         "recipe": {
@@ -63,6 +75,31 @@
         "files": [
             "config/packages/hautelook_alice.yaml",
             "fixtures/.gitignore"
+        ]
+    },
+    "league/flysystem-bundle": {
+        "version": "3.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "913dc3d7a5a1af0d2b044c5ac3a16e2f851d7380"
+        },
+        "files": [
+            "config/packages/flysystem.yaml",
+            "var/storage/.gitignore"
+        ]
+    },
+    "lexik/jwt-authentication-bundle": {
+        "version": "3.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "2.5",
+            "ref": "e9481b233a11ef7e15fe055a2b21fd3ac1aa2bb7"
+        },
+        "files": [
+            "config/packages/lexik_jwt_authentication.yaml"
         ]
     },
     "nelmio/alice": {
@@ -87,6 +124,31 @@
         },
         "files": [
             "config/packages/nelmio_cors.yaml"
+        ]
+    },
+    "php-amqplib/rabbitmq-bundle": {
+        "version": "2.17",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.12",
+            "ref": "ce3ca2e4577270c4f518539aa6b9e878998fcfef"
+        },
+        "files": [
+            "config/packages/old_sound_rabbit_mq.yaml",
+            "src/Consumer/.gitignore"
+        ]
+    },
+    "stof/doctrine-extensions-bundle": {
+        "version": "1.14",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.2",
+            "ref": "e805aba9eff5372e2d149a9ff56566769e22819d"
+        },
+        "files": [
+            "config/packages/stof_doctrine_extensions.yaml"
         ]
     },
     "symfony/console": {
@@ -132,6 +194,15 @@
             "src/Controller/.gitignore",
             "src/Kernel.php"
         ]
+    },
+    "symfony/maker-bundle": {
+        "version": "1.63",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
+        }
     },
     "symfony/messenger": {
         "version": "7.2",
@@ -231,6 +302,18 @@
             "config/packages/webpack_encore.yaml",
             "package.json",
             "webpack.config.js"
+        ]
+    },
+    "symfony/workflow": {
+        "version": "7.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.3",
+            "ref": "3b2f8ca32a07fcb00f899649053943fa3d8bbfb6"
+        },
+        "files": [
+            "config/packages/workflow.yaml"
         ]
     },
     "theofidry/alice-data-fixtures": {

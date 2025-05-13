@@ -1,7 +1,37 @@
 framework:
     messenger:
         transports:
-            default:
+            microservices:
+                dsn: "%env(MESSENGER_TRANSPORT_DSN)%"
+                serializer: App\Messenger\Serializer\ProtobufSerializer
+                options:
+                    exchange:
+                        name: microservices
+                        type: direct
+                    auto_setup: true
+                    queues:
+                        video_downloader:
+                            binding_keys: [video_downloader]
+                        sound_extractor:
+                            binding_keys: [sound_extractor]
+                        subtitle_generator:
+                            binding_keys: [subtitle_generator]
+                        subtitle_merger:
+                            binding_keys: [subtitle_merger]
+                        subtitle_transformer:
+                            binding_keys: [subtitle_transformer]
+                        video_formatter:
+                            binding_keys: [video_formatter]
+                        subtitle_incrustator:
+                            binding_keys: [subtitle_incrustator]
+                        video_incrustator:
+                            binding_keys: [video_incrustator]
+                        video_splitter:
+                            binding_keys: [video_splitter]
+                        api:
+                            binding_keys: [api]
+            sync: 'sync://'
+            async:
                 dsn: "%env(MESSENGER_TRANSPORT_DSN)%"
                 options:
                     exchange:
@@ -9,6 +39,22 @@ framework:
                         type: direct
                     auto_setup: true
                     queues:
-                        default:
-                            binding_keys: [default]
+                        async:
+                            binding_keys: [async]
+                
         routing:
+            App\Application\Command\CreateClipVideo: sync
+            App\Application\Command\CreateClipUrl: sync
+            App\Application\Command\CreateVideo: sync
+            App\Application\Command\UpdateTikTokToken: sync
+
+            App\Message\TaskMessage: sync
+
+            'App\Protobuf\TaskMessage': microservices
+            'App\Protobuf\VideoDownloaderMessage': microservices
+            'App\Protobuf\SoundExtractorMessage': microservices
+            'App\Protobuf\SubtitleGeneratorMessage': microservices
+            'App\Protobuf\SubtitleMergerMessage': microservices
+            'App\Protobuf\SubtitleTransformerMessage': microservices
+            'App\Protobuf\VideoFormatterMessage': microservices
+            'App\Protobuf\SubtitleIncrustatorMessage': microservices

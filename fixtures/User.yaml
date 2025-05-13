@@ -1,0 +1,14 @@
+App\Entity\User:
+  user_1:
+    id: 'da59434f-602f-4d39-879c-eb0950812737'
+    email: "<email('clement@gmail.com')>"
+    firstname: "<firstname('Clement')>"
+    lastname: "<lastname('Random')>"
+    plain_password: "<plainPassword('clement')>"
+    roles: ["ROLE_ADMIN"]
+  user_2:
+    id: 'ca1c6288-fdcf-4e5a-98fb-6f8fbfc8477e'
+    email: "<email('user@gmail.com')>"
+    firstname: "<firstname('User')>"
+    lastname: "<lastname('Random')>"
+    plain_password: "<plainPassword('random')>"
