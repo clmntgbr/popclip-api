@@ -42,6 +42,16 @@ framework:
                     from: VIDEO_DOWNLOADER_PENDING
                     to: VIDEO_DOWNLOADER_ERROR
 
+                process_vd_sound_extractor:
+                    from: VIDEO_DOWNLOADER_COMPLETE
+                    to: SOUND_EXTRACTOR_PENDING
+                sound_vd_extraction_success:
+                    from: SOUND_EXTRACTOR_PENDING
+                    to: SOUND_EXTRACTOR_COMPLETE
+                sound_vd_extraction_failure:
+                    from: SOUND_EXTRACTOR_PENDING
+                    to: SOUND_EXTRACTOR_ERROR
+
                 process_sound_extractor:
                     from: UPLOADED
                     to: SOUND_EXTRACTOR_PENDING

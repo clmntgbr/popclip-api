@@ -77,7 +77,8 @@ class SocialAccount
     #[JoinColumn(name: 'user_id', referencedColumnName: 'id')]
     private User $user;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->id = Uuid::v4();
     }
 

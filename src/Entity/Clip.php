@@ -6,8 +6,6 @@ use ApiPlatform\Metadata\ApiProperty;
 use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
-use ApiPlatform\Metadata\Post;
-use App\ApiResource\UploadVideoAction;
 use App\Protobuf\ClipStatus;
 use App\Repository\ClipRepository;
 use Doctrine\DBAL\Types\Types;
@@ -133,6 +131,13 @@ class Clip
         return $this;
     }
 
+    public function setUrl(string $url): self
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
     public function setConfiguration(Configuration $configuration): self
     {
         $this->configuration = $configuration;
@@ -167,6 +172,11 @@ class Clip
     public function getCover(): ?string
     {
         return $this->cover;
+    }
+
+    public function getUrl(): ?string
+    {
+        return $this->url;
     }
 
     public function getName(): ?string

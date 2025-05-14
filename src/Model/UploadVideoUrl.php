@@ -2,8 +2,6 @@
 
 namespace App\Model;
 
-use App\Entity\Configuration;
-
 class UploadVideoUrl
 {
     public function __construct(

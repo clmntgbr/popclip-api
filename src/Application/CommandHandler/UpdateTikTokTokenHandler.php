@@ -2,10 +2,10 @@
 
 namespace App\Application\CommandHandler;
 
+use App\Application\Command\UpdateTikTokToken;
 use App\Entity\SocialAccount;
 use App\Repository\SocialAccountRepository;
 use App\Service\TikTokService;
-use App\Application\Command\UpdateTikTokToken;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 #[AsMessageHandler]

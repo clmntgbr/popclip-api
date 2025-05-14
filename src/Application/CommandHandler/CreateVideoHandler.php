@@ -2,9 +2,9 @@
 
 namespace App\Application\CommandHandler;
 
+use App\Application\Command\CreateVideo;
 use App\Entity\Video;
 use App\Repository\VideoRepository;
-use App\Application\Command\CreateVideo;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 #[AsMessageHandler]

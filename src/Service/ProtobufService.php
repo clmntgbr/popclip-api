@@ -21,7 +21,7 @@ class ProtobufService
     public function getProtobufClip(Clip $clip): ProtobufClip
     {
         $protobufClip = $this->transformClipToProtobuf($clip);
-        
+
         $protobufConfiguration = $this->transformConfigurationToProtobuf($clip->getConfiguration());
         $protobufClip->setConfiguration($protobufConfiguration);
 
@@ -68,6 +68,10 @@ class ProtobufService
             $protobuf->setCover($clip->getCover());
         }
 
+        if ($clip->getUrl()) {
+            $protobuf->setUrl($clip->getUrl());
+        }
+
         return $protobuf;
     }
 
@@ -82,6 +86,10 @@ class ProtobufService
 
         if ($protobufClip->getCover()) {
             $clip->setCover($protobufClip->getCover());
+        }
+
+        if ($protobufClip->getUrl()) {
+            $clip->setUrl($protobufClip->getUrl());
         }
 
         return $clip;

@@ -2,13 +2,10 @@
 
 namespace App\Service;
 
-use App\Entity\User;
-use App\Model\UploadVideoConfiguration;
-use App\Application\Command\CreateClip;
 use App\Application\Command\CreateClipUrl;
 use App\Application\Command\CreateClipVideo;
-use App\Application\Command\CreateVideoClip;
-use App\Entity\Clip;
+use App\Entity\User;
+use App\Model\UploadVideoConfiguration;
 use App\Model\UploadVideoUrl;
 use League\Flysystem\FilesystemOperator;
 use Symfony\Bundle\SecurityBundle\Security;

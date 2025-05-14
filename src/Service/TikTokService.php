@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
+use App\Application\Command\UpdateTikTokToken;
 use App\Entity\SocialAccount;
 use App\Entity\ValueObject\AccessToken;
 use App\Exception\TikTokException;
@@ -12,7 +13,6 @@ use App\Model\TikTok\PublishStatusTikTok;
 use App\Model\TikTok\TokenTikTok;
 use App\Model\TikTok\UserTikTok;
 use App\Repository\SocialAccountRepository;
-use App\Application\Command\UpdateTikTokToken;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Uid\Uuid;

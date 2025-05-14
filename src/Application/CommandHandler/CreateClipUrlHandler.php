@@ -4,13 +4,10 @@ namespace App\Application\CommandHandler;
 
 use App\Application\Command\CreateClipUrl;
 use App\Entity\Clip;
-use App\Entity\Video;
 use App\Message\TaskMessage;
 use App\Repository\ClipRepository;
 use App\Repository\UserRepository;
 use App\Repository\VideoRepository;
-use App\Application\Command\CreateClipVideo;
-use App\Application\Command\CreateVideo;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Uid\Uuid;
