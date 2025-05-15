@@ -2,7 +2,7 @@
 
 namespace App\Application\CommandHandler;
 
-use App\Application\Command\CreateClipUrl;
+use App\Application\Command\CreateClipFromUrl;
 use App\Entity\Clip;
 use App\Message\TaskMessage;
 use App\Repository\ClipRepository;
@@ -14,7 +14,7 @@ use Symfony\Component\Uid\Uuid;
 use Symfony\Component\Workflow\WorkflowInterface;
 
 #[AsMessageHandler]
-final class CreateClipUrlHandler
+final class CreateClipFromUrlHandler
 {
     public function __construct(
         private UserRepository $userRepository,
@@ -25,7 +25,7 @@ final class CreateClipUrlHandler
     ) {
     }
 
-    public function __invoke(CreateClipUrl $message): void
+    public function __invoke(CreateClipFromUrl $message): void
     {
         $user = $this->userRepository->findOneBy(['id' => $message->userId->toString()]);
 

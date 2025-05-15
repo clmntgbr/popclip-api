@@ -6,7 +6,7 @@ use App\Model\UploadVideoConfiguration;
 use App\Model\UploadVideoUrl;
 use Symfony\Component\Uid\Uuid;
 
-final class CreateClipUrl
+final class CreateClipFromUrl
 {
     public function __construct(
         public readonly Uuid $clipId,

@@ -2,8 +2,8 @@
 
 namespace App\Service;
 
-use App\Application\Command\CreateClipUrl;
-use App\Application\Command\CreateClipVideo;
+use App\Application\Command\CreateClipFromUrl;
+use App\Application\Command\CreateClipFromVideo;
 use App\Entity\User;
 use App\Model\UploadVideoConfiguration;
 use App\Model\UploadVideoUrl;
@@ -74,7 +74,7 @@ class UploadVideoService
                 fclose($stream);
             }
 
-            $this->messageBus->dispatch(new CreateClipVideo(
+            $this->messageBus->dispatch(new CreateClipFromVideo(
                 clipId: $clipId,
                 userId: $user->getId(),
                 uploadVideoConfiguration: $configuration,
@@ -105,7 +105,7 @@ class UploadVideoService
         }
 
         try {
-            $this->messageBus->dispatch(new CreateClipUrl(
+            $this->messageBus->dispatch(new CreateClipFromUrl(
                 clipId: Uuid::v4(),
                 userId: $user->getId(),
                 uploadVideoConfiguration: $configuration,

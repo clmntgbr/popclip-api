@@ -5,7 +5,7 @@ namespace App\Application\Command;
 use App\Model\UploadVideoConfiguration;
 use Symfony\Component\Uid\Uuid;
 
-final class CreateClipVideo
+final class CreateClipFromVideo
 {
     public function __construct(
         public readonly Uuid $clipId,

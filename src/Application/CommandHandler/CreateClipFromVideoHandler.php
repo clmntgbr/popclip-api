@@ -2,7 +2,7 @@
 
 namespace App\Application\CommandHandler;
 
-use App\Application\Command\CreateClipVideo;
+use App\Application\Command\CreateClipFromVideo;
 use App\Application\Command\CreateVideo;
 use App\Entity\Clip;
 use App\Entity\Video;
@@ -16,7 +16,7 @@ use Symfony\Component\Uid\Uuid;
 use Symfony\Component\Workflow\WorkflowInterface;
 
 #[AsMessageHandler]
-final class CreateClipVideoHandler
+final class CreateClipFromVideoHandler
 {
     public function __construct(
         private UserRepository $userRepository,
@@ -27,7 +27,7 @@ final class CreateClipVideoHandler
     ) {
     }
 
-    public function __invoke(CreateClipVideo $message): void
+    public function __invoke(CreateClipFromVideo $message): void
     {
         $user = $this->userRepository->findOneBy(['id' => $message->userId->toString()]);
 

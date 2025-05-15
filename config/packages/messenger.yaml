@@ -43,8 +43,8 @@ framework:
                             binding_keys: [async]
                 
         routing:
-            App\Application\Command\CreateClipVideo: sync
-            App\Application\Command\CreateClipUrl: sync
+            App\Application\Command\CreateClipFromVideo: sync
+            App\Application\Command\CreateClipFromUrl: sync
             App\Application\Command\CreateVideo: sync
             App\Application\Command\UpdateTikTokToken: sync
 
